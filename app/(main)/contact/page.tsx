@@ -3,7 +3,7 @@ import { ContactCard, ContactForm, Newsletters } from "@/components/index";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact | DeliverySwift",
+  title: "Contact",
   description: "Contact us to any means.",
 };
 

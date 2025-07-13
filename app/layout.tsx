@@ -3,7 +3,10 @@ import "./globals.css";
 import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
-  title: "Delivery Swift",
+  title: {
+    default: "Delivery Swift",
+    template: "%s - Delivery Swift"
+  },
   description: "Delivery and Logistic company in the US",
 
 };

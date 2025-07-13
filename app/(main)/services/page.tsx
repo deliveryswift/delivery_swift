@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Services | DeliverySwift",
+  title: "Services",
   description:
     "Find here our indemand services.",
 };

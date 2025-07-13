@@ -25,9 +25,8 @@ function OrderDetails() {
       return response.json();
     },
     onSuccess: (data) => {
-      if( data.data.success ) {
+      if (data.data.success) {
         toast.success(data.data.message);
-
       }
       toast.error(data.data.error);
       setTrackingNumber("");
@@ -35,7 +34,6 @@ function OrderDetails() {
     },
     onError: (error) => {
       setFormState({ error: error.message, isLoading: false });
-      
     },
   });
 
@@ -89,8 +87,7 @@ function OrderDetails() {
           Error loading orders
         </div>
       )}
-      {
-      (!data || !data.data || isPending || data.data.length === 0) ? (
+      {!data || !data.data || isPending || data.data.length === 0 ? (
         <div className="h-[50dvh] grid place-items-center">
           <p className="text-lg lg:text-2xl text-gray-800-600 font-bold text-center">
             Please enter a valid tracking number
@@ -149,7 +146,10 @@ function OrderDetails() {
               <p className="text-green-800">
                 {data?.data[0].locations &&
                   data?.data[0]?.locations.map(
-                    (location: { place: string; time: Date }, index: number) => (
+                    (
+                      location: { place: string; time: Date },
+                      index: number
+                    ) => (
                       <article key={index}>
                         <p>{location.place}</p>
                         <p className="text-xs">

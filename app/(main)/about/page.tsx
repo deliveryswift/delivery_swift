@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import { myMetaData } from "@/assets/data";
 
 export const metadata: Metadata = {
-  title: 'About | DeliverySwift',
+  title: 'About',
   description: 'Learn about our mission, vision, and commitment to delivering excellence around the world.',
 }
 
