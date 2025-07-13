@@ -57,7 +57,7 @@ function OrderDetails() {
             value={trackingNumber}
             required
             maxLength={10}
-            onChange={(e) => setTrackingNumber(e.target.value)}
+            onChange={(e) => setTrackingNumber(e.target.value.trim())}
             className="border py-2 px-4 rounded border-gray-300 w-45 lg:w-62"
             placeholder="DS00000000"
           />
@@ -143,7 +143,7 @@ function OrderDetails() {
           <div className=" bg-green-50 p-4 rounded border border-green-200 mt-4">
             <p className="text-green-600 mb-3">Order location:</p>
             <div>
-              <p className="text-green-800">
+              <div className="text-green-800">
                 {data?.data[0].locations &&
                   data?.data[0]?.locations.map(
                     (
@@ -159,7 +159,7 @@ function OrderDetails() {
                       </article>
                     )
                   )}
-              </p>
+              </div>
             </div>
           </div>
           <button

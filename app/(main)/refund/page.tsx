@@ -59,7 +59,7 @@ function Refund() {
             value={trackingNumber}
             required
             maxLength={10}
-            onChange={(e) => setTrackingNumber(e.target.value)}
+            onChange={(e) => setTrackingNumber(e.target.value.trim())}
             className="border py-2 px-4 rounded border-gray-300 w-45 lg:w-62"
             placeholder="DS00000000"
           />
@@ -97,71 +97,24 @@ function Refund() {
           </p>
         </div>
       ) : (
-        <section className="border border-gray-300 p-4 rounded">
-          <p className="text-lg pb-4">
+        <section className=" min-h-[75dvh] ">
+          <div className="border border-gray-300 p-4 rounded shadow">
+            <p className="text-lg pb-4">
             Order Ref:{" "}
             <span className="underline">{data?.data[0].trackingNumber}</span>
           </p>
+         
           <div className="flex items-center gap-4">
-            <p className="text-neutral-600">Name:</p>
-            <p>{data?.data[0].name}</p>
+            <p className="text-neutral-600">Refunding amount:</p>
+            <p>${data?.data[0].refundAmount.toFixed(2)}</p>
           </div>
-          <div className="flex items-center gap-4">
-            <p className="text-neutral-600">Email:</p>
-            <p>{data?.data[0].email}</p>
-          </div>
-          <div className="flex items-center gap-4">
-            <p className="text-neutral-600">phone:</p>
-            <p>{data?.data[0].phone}</p>
-          </div>
-          <div className="flex items-center gap-4">
-            <p className="text-neutral-600">Address:</p>
-            <p>{data?.data[0].address}</p>
-          </div>
-          <div className="flex items-center gap-4">
-            <p className="text-neutral-600">Country:</p>
-            <p>{data?.data[0].sendingCountry.toUpperCase()}</p>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <p className="text-neutral-600">Payment Method:</p>
-            <p>{data?.data[0].paymentMethod}</p>
-          </div>
-          <div className="flex items-center gap-4">
-            <p className="text-neutral-600">Weight:</p>
-            <p>{data?.data[0].packageWeight}Kg</p>
-          </div>
-          <div className="flex items-center gap-4">
-            <p className="text-neutral-600">Amount:</p>
-            <p>${data?.data[0].amount.toFixed(2)}</p>
-          </div>
-          <div className="flex items-center gap-4">
-            <p className="text-neutral-600">Returning Country:</p>
-            <p>{data?.data[0].sendingCountry.toUpperCase()}</p>
-          </div>
+        
           <div className="flex items-center gap-4">
             <p className="text-neutral-600">Status:</p>
-            <p className="text-green-600">{data?.data[0].status}</p>
+            <p className="text-red-600">{data?.data[0].status}</p>
           </div>
-          <div className=" bg-green-50 p-4 rounded border border-green-200 mt-4">
-            <p className="text-green-600 mb-3">Order location:</p>
-            <div>
-              <div className="text-green-800">
-                {data?.data[0].locations &&
-                  data?.data[0]?.locations.map(
-                    (location: { place: string; time: Date }, index: number) => (
-                      <article key={index}>
-                        <p>{location.place}</p>
-                        <p className="text-xs">
-                          {new Date(location.time).toLocaleTimeString()}
-                        </p>
-                        <div className="min-h-6 border w-1 bg-gray-700 rounded"></div>
-                      </article>
-                    )
-                  )}
-              </div>
-            </div>
           </div>
+          
          
         </section>
       )}

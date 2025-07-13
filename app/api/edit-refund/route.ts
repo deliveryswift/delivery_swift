@@ -31,7 +31,7 @@ export async function PUT(req: Request) {
 
   await db
     .update(orderTable)
-    .set({ amount: newAmount, updatedAt: new Date() })
+    .set({ refundAmount: newAmount, status: 'Refunding', updatedAt: new Date() })
     .where(eq(orderTable.trackingNumber, trackingNumber));
 
   return NextResponse.json(

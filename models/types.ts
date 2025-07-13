@@ -14,6 +14,7 @@ export interface  OrderType {
         refund: boolean;
         status: string;
         amount: number;
+        refundAmount: number;
         packageWeight: number;
         sendingCountry: string;
         locations: Locations[];

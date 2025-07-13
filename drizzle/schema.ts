@@ -10,6 +10,7 @@ export const orderTable = pgTable('order_table',{
     refund: boolean('refund').notNull().default(false),
     status: varchar('status').notNull().default('Delivering'),
     amount: integer('amount').notNull().default(0),
+    refundAmount: integer('refund_amount').notNull().default(0),
     packageWeight: integer('package_weight').notNull().default(0),
     sendingCountry: varchar('sending_country',{ length: 50}).notNull(),
     locations: jsonb('locations').notNull(),

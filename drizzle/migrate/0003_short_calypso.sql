@@ -1,0 +1,1 @@
+ALTER TABLE "order_table" ADD COLUMN "refund_amount" integer DEFAULT 0 NOT NULL;

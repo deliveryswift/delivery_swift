@@ -78,6 +78,10 @@ function OrderDetails({ params }: { params: Promise<{ orderId: string }> }) {
           <p>${data?.data[0].amount.toFixed(2)}</p>
         </div>
         <div className="flex items-center gap-4">
+          <p className="text-neutral-600">Refunding amount:</p>
+          <p className="text-red-500">${data?.data[0].refundAmount.toFixed(2)}</p>
+        </div>
+        <div className="flex items-center gap-4">
           <p className="text-neutral-600">Sending Country:</p>
           <p>{data?.data[0].sendingCountry.toUpperCase()}</p>
         </div>
