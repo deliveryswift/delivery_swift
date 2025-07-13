@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1752221797151,
+      "tag": "0000_nosy_black_queen",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1752230119756,
+      "tag": "0001_nappy_star_brand",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1752244718346,
+      "tag": "0002_nosy_psynapse",
+      "breakpoints": true
+    }
+  ]
+}
